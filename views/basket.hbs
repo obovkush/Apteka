@@ -1,0 +1,12 @@
+<div class="js-order">
+  <h1>Ваша корзина</h1>
+  <div class="jsBasCard d-sm-flex flex-row flex-wrap justify-content-center">
+    {{> basketCard}}
+  </div>
+  <div class="d-sm-flex flex-column flex-wrap align-item-center text-center">
+    <p class="fs-5">Скидка: {{totalDiscount}}</p>
+    <p class="fs-5"> Итого: {{total}}</p>
+    <button type="button" class="orderBtn btn btn-success" data-total="{{total}}">Оформить заказ</button>
+  </div>
+
+</div>

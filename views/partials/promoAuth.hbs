@@ -1,0 +1,61 @@
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      {{#each currentPromo}}
+      <div class="alert alert-info text-center opacity-75" role="alert">
+        <h4>Акция этой недели {{date}} - {{end}}. Скидка {{discount}}%!</h4>
+      </div>
+      {{/each}}
+      <div class="d-sm-flex flex-row flex-wrap justify-content-center bd-highlight mb-3">
+        {{#each currentPromoDrugs}}
+        <div class="card" style="width: 18rem;">
+          <img src="/img/tabletki.jpeg" class="card-img-top" alt="" style="width: 6rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{info}}</p>
+          </div>
+          <ul class="list-group list-group-flush w-100">
+            <li class="list-group-item w-100">Цена: {{price}} руб.</li>
+            <li class="list-group-item w-100">Цена со скидкой: {{discountPrice}} руб.</li>
+          </ul>
+          <div class="card-body">
+            {{!-- <a href="#" class="btn btn-primary">В корзину</a> --}}
+            <button type="button" data-id="{{id}}" class="btn btn-dark">В корзину</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+    <div class="carousel-item">
+      {{#each sevenDayPromo}}
+      <div class="alert alert-info text-center opacity-75" role="alert">
+        <h4>Акция следующей недели {{date}} - {{end}}. Скидка {{discount}}%!</h4>
+      </div>
+      {{/each}}
+      <div class="d-flex flex-row flex-wrap justify-content-center bd-highlight mb-3">
+        {{#each sevenDayPromoDrugs}}
+        <div class="card" style="width: 18rem;">
+          <img src="/img/tabletki.jpeg" class="card-img-top" alt="" style="width: 6rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{info}}</p>
+          </div>
+          <ul class="list-group list-group-flush w-100">
+            <li class="list-group-item w-100">Цена: {{price}} руб.</li>
+            <li class="list-group-item w-100">Цена со скидкой: {{discountPrice}} руб.</li>
+          </ul>
+          <div class="card-body">
+            <button type="button" data-id="{{id}}" class="btn btn-dark">В корзину</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

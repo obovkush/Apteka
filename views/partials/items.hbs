@@ -1,0 +1,29 @@
+{{#if isAuthorized}}
+  <div class="allCards">
+    {{#each drugs}}
+    <div class="card">
+      <img class="product-img" src="{{image}}" alt="" width="200">
+      <h4 class="item-title">{{name}}</h4>
+      <p>Описание: {{info}}</p>
+      <p class="item-price">Цена: {{price}} руб.</p>
+      {{#if havePromo}}
+      <p class="item-discount">Цена со скидкой: {{discountPrice}} руб.</p>
+      {{/if}}
+      {{#if count}}
+      <p>В наличии</p>
+      <button data-id="{{id}}" type="button" class="jsBtn">В корзину</button>
+      {{else}}
+      <p>Товара нет в наличии</p>
+      {{/if}}
+    </div>
+    {{/each}}
+    {{else}}
+    {{#each drugs}}
+    <div class="card" data-id="{{id}}">
+      <img src="{{image}}" alt="" width="250px" height="250px" style="margin-top: 5px;">
+      <h4>{{name}}</h4>
+      <p>Описание: {{info}}</p>
+      <p>Цена: {{price}} руб.</p>
+    </div>
+    {{/each}}
+    {{/if}}
